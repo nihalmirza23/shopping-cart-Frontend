@@ -1,0 +1,35 @@
+<div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+  {{errorMsg}}
+</div>
+
+
+
+<div class="row">
+  <div class="col-sm-12" *ngFor="let p of products">
+    <div class="card" >
+      <div class="card-body">
+        <h5 class="card-title">{{p.productName}}</h5>
+
+        <h6 class="card-subtitle mb-2 text-muted">Price: {{p.price|currency:'Rs':'symbol'}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">Product Type: {{p.productType}}</h6>
+
+
+        <!-- <h6 class="card-subtitle mb-2 text-muted">
+          <span *ngFor="let entry of p.specification  | keyvalue">
+            {{entry.key}}- {{entry.value}}
+
+          </span></h6> -->
+
+          <span *ngFor="let image of p.image"  >
+            <img class="img-thumbnail" alt="product image" src= {{image}} height="50%" width="20%">
+          </span>
+          <br>
+
+          <a href="Javascript.void(0)" routerLink="/productdetails/{{p.productid}}" class="card-link">View  Product Details</a>
+          <!-- <a href="Javascript.void(0)"  class="card-link">View Reviews and Rating</a> -->
+          <br>
+
+      </div>
+    </div>
+  </div>
+</div>

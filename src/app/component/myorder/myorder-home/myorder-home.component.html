@@ -1,0 +1,38 @@
+<p>myorder-home works!</p>
+<br />
+
+<div class="row">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-10">
+    <div *ngFor="let o of order">
+      <div *ngFor="let i of o.items">
+        <div class="card text-white bg-dark">
+          <div class="row">
+
+            <div class="col-lg-6">
+              <br>
+              <h4>{{ i.productName }} <br /></h4>
+              <span>Deliver to:-</span> {{ o.address.houseNumber }},&nbsp;
+              {{ o.address.colonyName }},&nbsp;{{
+                o.address.streetName
+              }},&nbsp;{{ o.address.city }},&nbsp;
+              {{ o.address.state }},&nbsp;{{ o.address.pinCode }}
+              <br />
+
+              {{ i.productPrice| currency: "Rs. " }} <br />
+
+              Quantity :- {{ i.quantity }} <br />
+              Order status :- {{ o.orderStatus }} <br />
+              Order Date :- {{ o.orderDate }} <br />
+              mode of payment :- {{ o.modeOfPayment }}
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-1"></div>
+</div>

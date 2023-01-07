@@ -1,0 +1,28 @@
+<p>Product detail works</p>
+<span *ngFor="let image of product.image">
+  <img class="img-thumbnail" alt="{{product.productName}}" src={{image}} height="50%" width="20%" >
+</span>
+
+<div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">{{product.productName}}</h5>
+    <p class="card-text">{{product.price|currency:'Rs':'symbol'}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Product Type: {{product.productType}}</h6>
+    <p class="card-text">Product Description :{{product.description}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">
+      <span *ngFor="let entry of product.specification | keyvalue">
+{{entry.key}}- {{entry.value}}
+
+</span></h6>
+       <a href="Javascript.void(0)"
+       class="btn btn-primary"
+       routerLink="/cart/add/items/{{userId}}/{{product.productid}}/{{1}}">Add to Cart</a><br><br>
+  </div>
+<div>
+
+  <!-- <div>
+    <button (click)="postProductinCart()" >Button click ok</button>
+  </div> -->
+
+</div>
